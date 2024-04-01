@@ -46,7 +46,7 @@ console.log(total);
 // Programación orientada a objectos
 // clase
 
- class Drink {
+ class Drink1 {
 	constructor(name) {
 		this.name = name
 	}
@@ -56,7 +56,7 @@ console.log(total);
 	}
  }
 
- const drink = new Drink('agua');
+ const drink = new Drink1('agua');
  console.log(drink.info());
 
  // functional
@@ -71,7 +71,7 @@ console.log(total);
  console.log(drink2.info());
 
  // Herencia
- class Beer extends Drink {
+ class Beer extends Drink1 {
 	constructor(name, alcohol) {
 		super(name);
 		this.alcohol = alcohol;
