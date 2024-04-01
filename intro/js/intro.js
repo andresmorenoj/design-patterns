@@ -41,5 +41,31 @@ console.log(namesUpper, names);
 // reduce
 const numbers = [5,4,7,1,10];
 const total = numbers.reduce((acc, number) => acc + number, 0)
-
 console.log(total);
+
+// Programación orientada a objectos
+// clase
+
+ class Drink {
+	constructor(name) {
+		this.name = name
+	}
+
+	info() {
+		return `The drink is: ${this.name}`
+	}
+ }
+
+ const drink = new Drink('agua');
+ console.log(drink.info());
+
+ // functional
+ function Drink2(name) {
+	this.name = name;
+	this.info = function() {
+		return `The drink2 is: ${this.name}`
+	}
+ }
+
+ const drink2 = new Drink2('agua2');
+ console.log(drink2.info());
