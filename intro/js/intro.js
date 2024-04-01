@@ -69,3 +69,17 @@ console.log(total);
 
  const drink2 = new Drink2('agua2');
  console.log(drink2.info());
+
+ // Herencia
+ class Beer extends Drink {
+	constructor(name, alcohol) {
+		super(name);
+		this.alcohol = alcohol;
+	}
+	info(){
+		return `${super.info()} with alcohol ${this.alcohol}`
+	}
+ }
+
+ const beer = new Beer('erdinger', 8.5);
+ console.log(beer.info());
