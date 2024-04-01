@@ -29,3 +29,17 @@ function operation(fn, a, b) {
 }
 
 operation(sum, 10, 20)
+
+// foreach
+const names = ['name1', 'name2', 'name3'];
+names.forEach(name => console.log(name));
+
+// map
+const namesUpper = names.map(name => name.toUpperCase());
+console.log(namesUpper, names);
+
+// reduce
+const numbers = [5,4,7,1,10];
+const total = numbers.reduce((acc, number) => acc + number, 0)
+
+console.log(total);
