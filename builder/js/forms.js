@@ -80,7 +80,7 @@ class FormBuilder {
     return this;
   }
 
-	setColor(name, text) {
+  setColor(name, text) {
     this.controls.push({
       name,
       text,
@@ -96,15 +96,35 @@ class FormBuilder {
   }
 }
 
+class FormDirector {
+  constructor(formBuilder) {
+    this.setBuilder(formBuilder);
+  }
+
+  setBuilder(formBuilder) {
+    this.formBuilder = formBuilder;
+  }
+
+  createPersonForm() {
+    this.formBuilder.reset();
+    this.formBuilder.setText("firstname", "Nombre").setText("lastname", "Apellido");
+  }
+}
+
 const formBuilder = new FormBuilder();
 const personForm = formBuilder
   .setAction("add.php")
   .setText("firstname", "Nombre")
   .setText("lastname", "Apellido")
   .setCheckbox("drinker", "Eres bebedor")
-	.setColor("color", "color favorito")
+  .setColor("color", "color favorito")
   .build();
 
 console.log(personForm);
 
 form1.innerHTML = personForm.getContent();
+
+const director = new FormDirector(formBuilder);
+director.createPersonForm();
+
+form2.innerHTML = formBuilder.build().getContent()
